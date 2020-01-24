@@ -1,0 +1,39 @@
+this is myproject
+<div style="text-align:center">
+   <h1>
+      Welcome to {{title}}.
+   </h1>
+</div>
+<app-firstcmp></app-firstcmp>
+<div> Months :
+    <select (change) = "changemonths($event)">
+     <option *ngFor="let i of months">{{i}}</option>
+  </select>
+</div>
+<div>
+  <span *ngIf = "isavailable;else condition1">Condition is valid.</span> 
+  <ng-template #condition1>Condition is invalid</ng-template>
+</div>
+<button (click)="myClickFunction($event)">Click Me</button>
+<div style="text-align:center">
+  <span appFirstdirect >Welcome to {{title}}.</span>
+</div>
+<b>{{title | uppercase}}</b><br/>
+<b>{{title | lowercase}}</b>
+<b>{{6589.23 | currency:"INR"}}</b><br/>
+<b>{{6589.23 | currency:"INR":true}}</b>
+<h1>Date pipe</h1>
+ <b>{{todaydate | date:'d/M/y'}}</b><br/>
+ <b>{{todaydate | date:'shortTime'}}</b>
+ <h1>Percent Pipe</h1>
+ <b>{{00.54565 | percent}}</b>
+ <h1>Slice Pipe</h1>
+ <b>{{months | slice:2:6}}</b>
+ <h1>Custom Pipe</h1>
+<b>Square root of 25 is: {{25 | pipe1}}</b>
+<br/>
+<b>Square root of 729 is: {{729 | pipe1}}</b>
+<a routerLink = "app-firstcmp">New component</a>
+<router-outlet></router-outlet>
+ 
+ 
